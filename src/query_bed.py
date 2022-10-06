@@ -30,5 +30,16 @@ def main() -> None:
     # FIXME: put your code here
 
 
+    table = Table() ## process bed file (input)
+    for line in args.bed:
+        table.add_line(parse_line(line))
+        print(line)
+    
+    for line in args.query: 
+        print(line)
+        # hvad vil vi i query???
+
+
+
 if __name__ == '__main__':
     main()
