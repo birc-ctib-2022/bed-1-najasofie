@@ -36,3 +36,4 @@ def print_line(line: BedLine, f: TextIO) -> None:
     """Prints line to the stream f as a BED line."""
     print(line.chrom, line.chrom_start,
           line.chrom_end, line.name, file=f, sep='\t')
+
