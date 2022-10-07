@@ -37,7 +37,6 @@ def main() -> None:
     for line in args.query:
         value_query = line.split()
         new_table = bed_table.get_chrom("chr" + value_query[0][-1])
-        print(new_table)
         if len(new_table) > 0:
             for x_bed in new_table:
                 if x_bed[1] >= int(value_query[1]) and x_bed[1] < int(value_query[2]):
