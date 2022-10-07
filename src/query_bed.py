@@ -30,15 +30,20 @@ def main() -> None:
     # FIXME: put your code here
 
 
-    table = Table() ## process bed file (input)
+    bed_table = Table() ## process bed file (input)
     for line in args.bed:
-        table.add_line(parse_line(line))
-        print(line)
-    
-    for line in args.query: 
-        print(line)
-        # hvad vil vi i query???
+        bed_table.add_line(parse_line(line))
 
+    for line in args.query:
+        value_query = line.split()
+        new_table = bed_table.get_chrom("chr" + value_query[0][-1])
+        new_table
+        if len(new_table) > 0:
+            for x_bed in new_table:
+                if x_bed[1] >= int(value_query[1]) and x_bed[1] > int(value_query[2]):
+                    print(x_bed)
+                
+        
 
 
 if __name__ == '__main__':
