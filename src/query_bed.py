@@ -41,7 +41,7 @@ def main() -> None:
         if len(new_table) > 0:
             for x_bed in new_table:
                 if x_bed[1] >= int(value_query[1]) and x_bed[1] > int(value_query[2]):
-                    print(x_bed)
+                    print_line(x_bed, args.outfile)
                 
         
 
