@@ -1,0 +1,20 @@
+
+How does your method for extracting features work?
+Answer: First we test if the bed-file contain any of the wanted chromosomes
+from the query-files. then we tjek if the start position from the bed-file,
+is between the start- and end position (>end position) given in the query-file.
+The program prints the lines from the bed-file, that meets the requirements. 
+
+What is the complexity of the algorithm, as a function of the size of the two input files? 
+When you answer this, you need to know that you can get the list of chromosomse from a `query.Table`
+in constant time, but it does, of course, take longer to run through all the lines in it.
+Anwer: We interate over all the rows in bed-file (n) as many times as the amount of rows in the query-file (m).
+Therefor we get O(n*m)
+
+Did you, at any point, exploit that our features are on single nucleotides and not larger regions?
+Answer: We have assumed that all the end positions are start position + 1.
+
+If you did, what would it take to handle general regions?
+Answer: we did not make a general algorithm and therefor have not considered what it takes 
+to make an algorithm that handles a general case. 
+
